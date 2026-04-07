@@ -79,7 +79,7 @@ if __name__ == "__main__":
         result = graph.invoke({"messages": [("human", user_input)]})
         final = result["messages"][-1]
         # print(f"\nTravelBuddy: {final.content}")
-        # I need to edit this line because Google Gemini is misbehaving.
+        # I need to edit this line because Google Gemini is misbehaving the format compared to OpenAI.
         if isinstance(final.content, list):
             text = "".join(block.get("text", "") for block in final.content)
         else:
